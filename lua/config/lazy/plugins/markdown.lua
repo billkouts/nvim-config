@@ -23,3 +23,16 @@ return {
     end,
   },
 }
+
+-- TODO: check to replace iamcco markdown preview with https://github.com/jannis-baum/vivify.vim, because
+-- 1. plugin is not actively maintained
+-- 2. github flavoured markdown (warning, tip, etc) do not show up properly
+
+-- TODO: check the following plugins:
+-- https://github.com/bullets-vim/bullets.vim
+-- https://github.com/echasnovski/mini.ai
+-- https://github.com/echasnovski/mini.surround
+-- https://github.com/hedyhli/outline.nvim
+-- https://github.com/lukas-reineke/headlines.nvim
+-- https://github.com/nvim-pack/nvim-spectre
+-- https://github.com/folke/trouble.nvim

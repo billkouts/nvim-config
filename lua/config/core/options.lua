@@ -30,3 +30,8 @@ opt.mouse = ""
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- disable builtin file explorer
+-- i have an autocommand to load neo-tree instead
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
