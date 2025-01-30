@@ -195,6 +195,7 @@ return {
         "erb-formatter",
         "erb-lint",
         "codelldb",
+        "pyright",
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
