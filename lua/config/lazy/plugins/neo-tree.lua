@@ -5,7 +5,7 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
-    "3rd/image.nvim", -- TODO: image previewing doesn't work
+    -- "3rd/image.nvim", -- TODO: image previewing doesn't work
   },
   config = function()
     vim.keymap.set(
