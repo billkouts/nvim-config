@@ -16,6 +16,6 @@ return {
     )
     vim.keymap.set("n", "<leader>E", ":Neotree float reveal<CR>", { desc = "Show file explorer float" })
     vim.keymap.set("n", "<leader><C-e>", ":Neotree filesystem reveal right<CR>", { desc = "Show file explorer" })
-    -- vim.keymap.set('n', '<leader>E', ':Neotree position=current<CR>', { desc = "Show file explorer full" })
+    vim.keymap.set("n", "<leader>EI", ":Neotree position=current<CR>", { desc = "Show file explorer full" })
   end,
 }

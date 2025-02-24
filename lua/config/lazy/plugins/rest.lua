@@ -1,0 +1,50 @@
+return {
+  "mistweaverco/kulala.nvim",
+  ft = "http",
+  keys = {
+    { "<leader>t", "", desc = "+Rest", ft = { "http", "rest" } },
+    { "<leader>tb", "<cmd>lua require('kulala').scratchpad()<cr>", desc = "Open scratchpad", ft = { "http", "rest" } },
+    { "<leader>tc", "<cmd>lua require('kulala').copy()<cr>", desc = "Copy as cURL", ft = { "http", "rest" } },
+    { "<leader>tC", "<cmd>lua require('kulala').from_curl()<cr>", desc = "Paste from curl", ft = { "http", "rest" } },
+    {
+      "<leader>tg",
+      "<cmd>lua require('kulala').download_graphql_schema()<cr>",
+      desc = "Download GraphQL schema",
+      ft = { "http", "rest" },
+    },
+    {
+      "<leader>ti",
+      "<cmd>lua require('kulala').inspect()<cr>",
+      desc = "Inspect current request",
+      ft = { "http", "rest" },
+    },
+    {
+      "<leader>tn",
+      "<cmd>lua require('kulala').jump_next()<cr>",
+      desc = "Jump to next request",
+      ft = { "http", "rest" },
+    },
+    {
+      "<leader>tp",
+      "<cmd>lua require('kulala').jump_prev()<cr>",
+      desc = "Jump to previous request",
+      ft = { "http", "rest" },
+    },
+    { "<leader>tq", "<cmd>lua require('kulala').close()<cr>", desc = "Close window", ft = { "http", "rest" } },
+    {
+      "<leader>tr",
+      "<cmd>lua require('kulala').replay()<cr>",
+      desc = "Replay the last request",
+      ft = { "http", "rest" },
+    },
+    { "<leader>ts", "<cmd>lua require('kulala').run()<cr>", desc = "Send the request", ft = { "http", "rest" } },
+    { "<leader>tS", "<cmd>lua require('kulala').show_stats()<cr>", desc = "Show stats", ft = { "http", "rest" } },
+    {
+      "<leader>tt",
+      "<cmd>lua require('kulala').toggle_view()<cr>",
+      desc = "Toggle headers/body",
+      ft = { "http", "rest" },
+    },
+  },
+  opts = {},
+}

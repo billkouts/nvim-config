@@ -174,6 +174,25 @@ return {
         emmet_language_server = {},
         marksman = {},
         rust_analyzer = {},
+        elmls = {},
+        intelephense = {
+          settings = {
+            intelephense = {
+              -- A few common options
+              format = {
+                enable = true,
+              },
+              diagnostics = {
+                undefinedSymbols = true,
+                undefinedConstants = true,
+              },
+              -- This is useful for large projects
+              files = {
+                maxSize = 5000000,
+              },
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed

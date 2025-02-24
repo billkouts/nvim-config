@@ -18,3 +18,25 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end
   end,
 })
+
+-- Store the last time we typed a dash
+local last_dash_time = 0
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "php",
+  callback = function()
+    vim.keymap.set("i", "-", function()
+      local now = vim.loop.hrtime() / 1e6 -- milliseconds
+      local diff = now - last_dash_time
+      last_dash_time = now
+
+      -- If the previous key was "-" within 500ms, replace with "->"
+      if diff < 500 then
+        -- delete the previous "-" and insert "->"
+        return "<BS>->"
+      else
+        return "-"
+      end
+    end, { buffer = true, expr = true })
+  end,
+})
