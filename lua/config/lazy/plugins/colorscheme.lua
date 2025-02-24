@@ -17,6 +17,9 @@ return {
       -- You can configure highlights by doing something like:
       vim.cmd.hi("Comment gui=none")
     end,
+    opts = {
+      dim_inactive = true,
+    },
   },
 }
 
