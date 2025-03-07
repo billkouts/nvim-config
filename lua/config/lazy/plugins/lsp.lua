@@ -174,6 +174,7 @@ return {
         emmet_language_server = {},
         marksman = {},
         rust_analyzer = {},
+        elmls = {},
       }
 
       -- Ensure the servers and tools above are installed
