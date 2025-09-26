@@ -19,24 +19,45 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
--- Store the last time we typed a dash
-local last_dash_time = 0
+local double_tap_mappings = {
+  {
+    pattern = { "php" },
+    char = "-",
+    result = "->",
+    timeout = 500,
+  },
+  {
+    pattern = { "php" },
+    char = "=",
+    result = "=>",
+    timeout = 500,
+  },
+  -- you can add more here easily
+  -- {
+  --   pattern = { "php", "javascript" },
+  --   char = ">",
+  --   result = ">>",
+  --   timeout = 300,
+  -- },
+}
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "php",
-  callback = function()
-    vim.keymap.set("i", "-", function()
-      local now = vim.loop.hrtime() / 1e6 -- milliseconds
-      local diff = now - last_dash_time
-      last_dash_time = now
+for _, cfg in ipairs(double_tap_mappings) do
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = cfg.pattern,
+    callback = function(args)
+      local last_press = 0
 
-      -- If the previous key was "-" within 500ms, replace with "->"
-      if diff < 500 then
-        -- delete the previous "-" and insert "->"
-        return "<BS>->"
-      else
-        return "-"
-      end
-    end, { buffer = true, expr = true })
-  end,
-})
+      vim.keymap.set("i", cfg.char, function()
+        local now = vim.loop.hrtime() / 1e6
+        local diff = now - last_press
+        last_press = now
+
+        if diff < cfg.timeout then
+          return "<BS>" .. cfg.result
+        else
+          return cfg.char
+        end
+      end, { buffer = args.buf, expr = true })
+    end,
+  })
+end

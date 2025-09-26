@@ -40,7 +40,7 @@ return {
     { "<leader>ts", "<cmd>lua require('kulala').run()<cr>", desc = "Send the request", ft = { "http", "rest" } },
     { "<leader>tS", "<cmd>lua require('kulala').show_stats()<cr>", desc = "Show stats", ft = { "http", "rest" } },
     {
-      "<leader>tt",
+      "<leader>tv",
       "<cmd>lua require('kulala').toggle_view()<cr>",
       desc = "Toggle headers/body",
       ft = { "http", "rest" },
