@@ -37,7 +37,8 @@ return {
         -- python = { "pyright" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { "prettierd", "prettier", stop_after_first = true },
+        json = { "prettierd", "prettier", stop_after_first = true },
         rust = { "rustfmt" },
         -- ["markdown"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
         -- ["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
