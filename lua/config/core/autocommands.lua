@@ -32,6 +32,12 @@ local double_tap_mappings = {
     result = "=>",
     timeout = 500,
   },
+  {
+    pattern = { "elixir" },
+    char = "|",
+    result = "|>",
+    timeout = 500,
+  },
   -- you can add more here easily
   -- {
   --   pattern = { "php", "javascript" },
