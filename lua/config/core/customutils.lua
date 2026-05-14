@@ -13,6 +13,14 @@ local function my_custom_utils()
       -- 2. Capture line (.*) and wrap in ("\1"),
       cmd = [[:%s/\r//ge | %s/^\(.*\)$/("\1"),/]],
     },
+    {
+      title = 'Wrap lines: "text",',
+      cmd = [[:%s/^\(.*\)$/"\1",/]],
+    },
+    {
+      title = "Join lines with comma",
+      cmd = [[:%s/\n/,/g | %s/,$//]],
+    },
   }
 
   pickers
@@ -34,6 +42,7 @@ local function my_custom_utils()
           actions.close(prompt_bufnr)
           local selection = action_state.get_selected_entry()
           vim.cmd(selection.value.cmd)
+          vim.cmd("nohlsearch")
         end)
         return true
       end,
