@@ -8,9 +8,11 @@ local function my_custom_utils()
   -- Define your commands here
   local utils = {
     {
+      title = "Trim carriage returns (^M)",
+      cmd = [[:%s/\r//ge]],
+    },
+    {
       title = 'Wrap lines: ("text"),',
-      -- 1. Remove carriage returns (e flag)
-      -- 2. Capture line (.*) and wrap in ("\1"),
       cmd = [[:%s/\r//ge | %s/^\(.*\)$/("\1"),/]],
     },
     {
