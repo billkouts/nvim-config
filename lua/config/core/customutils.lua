@@ -23,6 +23,10 @@ local function my_custom_utils()
       title = "Join lines with comma",
       cmd = [[:%s/\n/,/g | %s/,$//]],
     },
+    {
+      title = "Convert polygon {x,y} to GeoJSON [[y,x]] coordinates",
+      cmd = [[:%s/"x"://ge | %s/"y"://ge | %s/{/[/ge | %s/}/]/ge | %s/\[\([-0-9.]\+\),\([-0-9.]\+\)\]/[\2,\1]/ge]],
+    },
   }
 
   pickers
