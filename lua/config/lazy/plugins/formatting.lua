@@ -17,6 +17,9 @@ return {
       format_on_save = { timeout_ms = 750, lsp_format = "fallback" },
       formatters_by_ft = {
         lua = { "stylua" },
+        sql = { "sql_formatter_sql" },
+        mysql = { "sql_formatter_mysql" },
+        plsql = { "sql_formatter_plsql" },
         html = { "prettier" },
         css = { "prettier" },
         javascript = { "prettier" },
@@ -33,6 +36,26 @@ return {
         blade = { "blade-formatter" },
       },
       formatters = {
+        sql_formatter_sql = {
+          command = "sql-formatter",
+          args = { "--config", '{"language":"sql","keywordCase":"upper","functionCase":"upper"}' },
+        },
+        sql_formatter_sqlite = {
+          command = "sql-formatter",
+          args = { "--config", '{"language":"sqlite","keywordCase":"upper","functionCase":"upper"}' },
+        },
+        sql_formatter_mysql = {
+          command = "sql-formatter",
+          args = { "--config", '{"language":"mysql","keywordCase":"upper","functionCase":"upper"}' },
+        },
+        sql_formatter_postgresql = {
+          command = "sql-formatter",
+          args = { "--config", '{"language":"postgresql","keywordCase":"upper","functionCase":"upper"}' },
+        },
+        sql_formatter_plsql = {
+          command = "sql-formatter",
+          args = { "--config", '{"language":"plsql","keywordCase":"upper","functionCase":"upper"}' },
+        },
         mix = {
           command = "mix",
           args = { "format", "--stdin-filename", "$FILENAME", "-" },
