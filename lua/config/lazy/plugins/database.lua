@@ -23,7 +23,8 @@ vim.g.dbs = {
   { name = "guru-docker-local", url = "mysql://root:root@localhost:3306/local_prod_db_guru" },
 
   -- production connections (via pass)
-  { name = "guru-prod-readonly", url = get_db_url("apps/guru/production/readonly") },
+  { name = "apps/guru/production/readonly", url = get_db_url("apps/guru/production/readonly") },
+  { name = "apps/hub/production/readonly", url = get_db_url("apps/hub/production/readonly") },
 }
 
 local export_job_id = nil
