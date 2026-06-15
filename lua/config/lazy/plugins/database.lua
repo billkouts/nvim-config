@@ -24,6 +24,7 @@ vim.g.dbs = {
 
   -- production connections (via pass)
   { name = "apps/guru/production/readonly", url = get_db_url("apps/guru/production/readonly") },
+  { name = "apps/guru/production/readwrite", url = get_db_url("apps/guru/production/readwrite") },
   { name = "apps/hub/production/readonly", url = get_db_url("apps/hub/production/readonly") },
   { name = "apps/tms/production/readwrite", url = get_db_url("apps/tms/production/readwrite") },
 }
