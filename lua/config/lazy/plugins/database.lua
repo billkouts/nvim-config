@@ -28,6 +28,8 @@ vim.g.dbs = {
   { name = "apps/hub/production/readonly", url = get_db_url("apps/hub/production/readonly") },
   { name = "apps/tms/production/read", url = get_db_url("apps/tms/production/read") },
   { name = "apps/tms/production/readwrite", url = get_db_url("apps/tms/production/readwrite") },
+  { name = "apps/apt/production/readwrite", url = get_db_url("apps/apt/production/readwrite") },
+  { name = "apps/abas/production/readwrite", url = get_db_url("apps/abas/production/readwrite") },
 }
 
 local export_job_id = nil
