@@ -17,15 +17,15 @@ end
 
 local map = vim.keymap.set
 
-map("n", "<leader>do", open_float, { desc = "Show diagnostic float" })
+map("n", "<leader>do", open_float, { desc = "[Diagnostics] Show diagnostic float" })
 
 map("n", "<leader>dj", function()
   vim.diagnostic.jump({ count = 1, float = true })
-end, { desc = "Next diagnostic" })
+end, { desc = "[Diagnostics] Next diagnostic" })
 
 map("n", "<leader>dk", function()
   vim.diagnostic.jump({ count = -1, float = true })
-end, { desc = "Prev diagnostic" })
+end, { desc = "[Diagnostics] Prev diagnostic" })
 
 map("n", "<leader>da", function()
   local wins = vim.fn.getwininfo()
@@ -41,7 +41,7 @@ map("n", "<leader>da", function()
   else
     vim.diagnostic.setloclist({ open = true })
   end
-end, { desc = "Toggle loclist" })
+end, { desc = "[Diagnostics] Toggle loclist" })
 
 map("n", "<leader>dd", function()
   local config = vim.diagnostic.config()
@@ -57,4 +57,4 @@ map("n", "<leader>dd", function()
     vim.diagnostic.config({ virtual_text = true, signs = true, underline = true })
     print("Diagnostics: Shown")
   end
-end, { desc = "Toggle diagnostics" })
+end, { desc = "[Diagnostics] Toggle diagnostics" })
