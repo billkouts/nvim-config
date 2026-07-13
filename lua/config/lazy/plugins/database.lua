@@ -34,6 +34,12 @@ vim.g.dbs = {
 
 local export_job_id = nil
 
+local function url_decode(str)
+  return str:gsub("%%(%x%x)", function(hex)
+    return string.char(tonumber(hex, 16))
+  end)
+end
+
 local function parse_mysql_url(url)
   local after_scheme = url:match("^mysql://(.+)$")
   if not after_scheme then
@@ -58,7 +64,7 @@ local function parse_mysql_url(url)
   if not user or not host or not dbname then
     return nil
   end
-  return user, password, host, port, dbname
+  return url_decode(user), url_decode(password), url_decode(host), port, url_decode(dbname)
 end
 
 local function resolve_filepath(input)
