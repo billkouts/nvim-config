@@ -69,3 +69,9 @@ vim.keymap.set("n", "<C-j>", "o<Esc>", { desc = "Add new empty line below" })
 
 -- Move up and add new empty line
 vim.keymap.set("n", "<C-k>", "O<Esc>", { desc = "Add new empty line above" })
+
+-- Insert space to the right
+vim.keymap.set("n", "<C-l>", "a <Esc>", { desc = "Insert space to the right" })
+
+-- Insert space to the left
+vim.keymap.set("n", "<C-h>", "i <Esc>", { desc = "Insert space to the left" })
