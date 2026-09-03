@@ -20,7 +20,8 @@ vim.g.dbs = {
   -- { name = "local-app1",   url = "mysql://root:root@localhost:3306/app1" },
 
   -- docker connections (plain URL)
-  { name = "guru-docker-local", url = "mysql://root:root@localhost:3306/local_prod_db_guru" },
+  { name = "apps/guru/local/readwrite", url = "mysql://root:root@localhost:3306/local_prod_db_guru" },
+  { name = "apps/tms/local/readwrite", url = "mysql://webtms:0000@127.0.0.1:3307/tms_backend_dev" },
 
   -- production connections (via pass)
   { name = "apps/guru/production/readonly", url = get_db_url("apps/guru/production/readonly") },
